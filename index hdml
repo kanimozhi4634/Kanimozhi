@@ -1,25 +1,158 @@
-https://github.cHi, I'm Kanimozhi 👋
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>R Kanimozhi Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            text-align:center;
+            background:#0d1117;
+            color:white;
+        }
 
-## 📄 My Details
-- 📱 Phone: 6374461347
-- 📧 Email: kanimozhi4634@gmail.com
-- 💻 GitHub: https://github.com/kanimozhi4634
+        .container { max-width:1000px; margin:auto; padding:10px; }
 
-## 🎓 About Me
-I am a Mechanical Engineering student.
-I am interested in mechanical design, manufacturing, and mini projects.
+        .box {
+            margin:30px 15px;
+            padding:25px;
+            border-radius:15px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border:1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 0 15px rgba(0,255,204,0.3);
+            opacity:0;
+            transform: translateY(50px);
+            transition:1s ease;
+        }
+        .box.visible { opacity:1; transform:translateY(0); }
 
-## 🛠 Skills
-- AutoCAD
-- SolidWorks
-- Manufacturing Technology
-- Fluid Mechanics
-- Engineering Mechanics
+        h1 { color:#00ffcc; margin-top:50px; font-size:40px; line-height:1.2; }
+        .gradient-text {
+            font-size:28px;
+            font-weight:bold;
+            background: linear-gradient(270deg, #00ffcc, #00c3ff, #ff00c3, #00ffcc);
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientAnimation 6s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
 
-## 📂 Projects
-- Mini Mechanical Prototype
-- Water Pump Project
-- Manufacturing Process Study
+        a { color:#00ffcc; text-decoration:none; }
+        .social a { font-size:26px; margin:10px; display:inline-block; transition:0.3s; }
+        .social a:hover { transform: scale(1.3); }
 
-## 📫 Contact Me
-You can contact me through email or phone number.
+        footer { margin-top:20px; font-size:12px; }
+
+        .cursor-glow {
+            position: fixed;
+            width:150px;
+            height:150px;
+            background: radial-gradient(circle, rgba(0,255,204,0.3) 0%, transparent 70%);
+            border-radius:50%;
+            pointer-events:none;
+            z-index:10;
+        }
+
+        .hobby-item:hover {
+            transform: scale(1.2);
+            color: #00c3ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="cursor-glow" id="glow"></div>
+
+    <h1>Hi, I'm R KANIMOZHI</h1>
+    <p>Mechanical Engineering Student</p>
+    <p>Passionate about Designing & Learning Technology</p>
+
+    <div class="social">
+        <a href="https://github.com/kanimozhi" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- About -->
+    <div class="box">
+        <h2 class="gradient-text">About Me</h2>
+        <p>I am a Mechanical Engineering student passionate about creating innovative solutions.</p>
+        <p>I enjoy designing machines, exploring engineering challenges, and learning new technologies.</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="box">
+        <h2 class="gradient-text">Skills</h2>
+        <p>Mechanical Design & Analysis</p>
+        <p>CAD Modeling (SolidWorks, AutoCAD)</p>
+        <p>Basic Programming & Simulation</p>
+        <p>Problem-Solving & Engineering Projects</p>
+    </div>
+
+    <!-- Projects -->
+    <div class="box">
+        <h2 class="gradient-text">Projects</h2>
+        <p>Mini Mechanical Projects: Gear systems, linkages, and automation setups</p>
+        <p>Engineering Assignments: CAD designs and simulations</p>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="box">
+        <h2 class="gradient-text">Hobbies</h2>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top:15px;">
+            <div class="hobby-item">
+                <i class="fas fa-film" style="font-size:40px; color:#00ffcc;"></i>
+                <p>Watching Movies</p>
+            </div>
+            <div class="hobby-item">
+                <i class="fas fa-book" style="font-size:40px; color:#00ffcc;"></i>
+                <p>Reading Books</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="box">
+        <h2 class="gradient-text">Contact Me</h2>
+        <p><i class="fas fa-phone"></i> +91 6374461347</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:kanimozhi4634@gmail.com">kanimozhi4634@gmail.com</a></p>
+    </div>
+
+    <footer>
+        Thank you for visiting my website. Designed by R Kanimozhi | 2026 <br>
+        Contact: +91 6374461347 | <a href="mailto:kanimozhi4634@gmail.com">kanimozhi4634@gmail.com</a>
+    </footer>
+</div>
+
+<script>
+    const glow = document.getElementById("glow");
+    document.addEventListener("mousemove",(e)=>{
+        glow.style.left=e.clientX+"px";
+        glow.style.top=e.clientY+"px";
+    });
+
+    const boxes = document.querySelectorAll('.box');
+    function checkBoxes() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+            if(boxTop < triggerBottom){ box.classList.add('visible'); }
+        });
+    }
+    window.addEventListener('scroll', checkBoxes);
+    checkBoxes();
+</script>
+
+</body>
+</html>
